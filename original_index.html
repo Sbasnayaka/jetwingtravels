@@ -64,6 +64,225 @@ gtag("config", "GT-5MJP9N3");
 //# sourceURL=google_gtagjs-js-after
 /* ]]> */
 </script>
+<!-- Styles for the Guest Reviews section (add to your stylesheet or place within <style> tags) -->
+<style>
+/* Guest Reviews Section Base Styling */
+.hm-guest-reviews {
+    padding: 80px 0;
+    background: #fafafa;
+}
+.hm-guest-reviews .container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.section-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-intro .sub-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #adab3f;
+    margin-bottom: 10px;
+}
+.section-intro .sub-title .icon {
+    margin-right: 8px;
+    display: inline-flex;
+}
+.section-intro h2.title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #092956;
+    margin-bottom: 0.5rem;
+}
+.section-intro h3.title-2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #666;
+}
+
+/* Two-column layout */
+.reviews-grid {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+.existing-reviews {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.add-review {
+    flex: 1;
+    background: #fff;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* Review Card Styling */
+.review-card {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s;
+}
+.review-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+}
+.reviewer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #092956;
+    margin: 0 0 2px 0;
+}
+.reviewer-country {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #adab3f;
+    text-transform: uppercase;
+}
+.star-rating {
+    display: flex;
+    gap: 2px;
+}
+.star-rating .star {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+.star-rating .star.filled {
+    color: #FCB900; /* gold-yellow to match brand */
+}
+.review-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #444;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Form Styling */
+.add-review .form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #092956;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+.review-form .form-group {
+    margin-bottom: 20px;
+}
+.review-form label {
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #092956;
+    margin-bottom: 8px;
+    text-transform: none;
+}
+.review-form .form-element {
+    width: 100%;
+    padding: 10px 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #dcdcdc;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s;
+    color: #333;
+}
+.review-form .form-element:focus {
+    border-bottom-color: #adab3f;
+}
+.review-form select.form-element {
+    appearance: none;
+    -webkit-appearance: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23092956' d='M6 8l-4-4h8z'/%3E%3C/svg%3E") no-repeat right 5px center;
+    padding-right: 25px;
+    cursor: pointer;
+}
+.review-form textarea.form-element {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Star Rating Input */
+.star-rating-input {
+    display: flex;
+    gap: 5px;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.star-rating-input .star-input {
+    color: #ccc;
+    transition: color 0.2s;
+    user-select: none;
+}
+.star-rating-input .star-input.active,
+.star-rating-input .star-input:hover {
+    color: #FCB900;
+}
+/* Submit Button */
+.review-form .btn-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 35px;
+    background: #adab3f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.review-form .btn-submit:hover {
+    background: #8c8a2d;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .reviews-grid {
+        flex-direction: column;
+    }
+    .section-intro h2.title {
+        font-size: 2.2rem;
+    }
+}
+</style>
 <link rel="https://api.w.org/" href="https://jetwingtravels.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://jetwingtravels.com/wp-json/wp/v2/pages/6" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://jetwingtravels.com/xmlrpc.php?rsd" />
 <link rel="canonical" href="https://jetwingtravels.com/" />
 <link rel='shortlink' href='https://jetwingtravels.com/' />
@@ -1757,6 +1976,135 @@ s0.parentNode.insertBefore(s1,s0);
                 </div>
             </div> 
         </section> 
+
+		<!--   GUEST REVIEWS SECTION   -->
+<section class="hm-guest-reviews">
+    <div class="container">
+        <div class="section-intro">
+            <div class="sub-title">
+                <span class="icon">
+                    <svg class="jetwing-icon" width="15" height="13" viewBox="0 0 15 13">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.0166 4.52697C14.7258 7.26714 14.4629 10.3988 12.4907 11.3122C10.5185 12.2255 7.62593 10.7902 6.04818 8.05005C4.33894 5.30988 4.60191 2.17825 6.5741 1.26486C8.41481 0.351469 11.4388 1.7868 13.0166 4.52697Z" fill="#FCB900"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.83692 5.44041C10.6498 5.83187 13.6739 7.65865 13.6739 9.61591C13.6739 11.5732 10.5183 13.0085 6.83692 12.7475C3.02402 12.3561 0 10.5293 0 8.57204C0 6.61477 3.02402 5.17944 6.83692 5.44041Z" fill="#E30079"/>
+                    </svg>
+                </span>
+                <span class="text">What our guests say</span>
+            </div>
+            <h2 class="h2 title">Guest Reviews</h2>
+            <h3 class="h3 title-2">Share your experience</h3>
+        </div>
+
+        <div class="reviews-grid">
+            <!-- LEFT COLUMN – EXISTING REVIEWS -->
+            <div class="existing-reviews">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">Emily Thompson</h4>
+                            <span class="reviewer-country">Australia</span>
+                        </div>
+                        <div class="star-rating" data-rating="5">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Absolutely unforgettable journey! Our guide made every moment special. The cultural sights and wildlife encounters exceeded all expectations. Highly recommend Jetwing Travels."
+                    </p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">Jean-Pierre Dubois</h4>
+                            <span class="reviewer-country">France</span>
+                        </div>
+                        <div class="star-rating" data-rating="5">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "From the ancient cities to the pristine beaches, everything was perfectly organized. The hotels were superb and the food was divine. A truly luxurious and authentic experience."
+                    </p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <h4 class="reviewer-name">Amal Perera</h4>
+                            <span class="reviewer-country">Sri Lanka</span>
+                        </div>
+                        <div class="star-rating" data-rating="4">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                    <p class="review-text">
+                        "Even as a local, I discovered hidden gems I never knew existed. The itinerary was fresh and exciting. Only slight wish for more free time, but overall excellent."
+                    </p>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN – ADD REVIEW FORM -->
+            <div class="add-review">
+                <h3 class="form-title">Write a Review</h3>
+                <form id="reviewForm" class="review-form" onsubmit="event.preventDefault(); alert('Thank you for your review!');">
+                    <div class="form-group">
+                        <label for="reviewerName">Your Name *</label>
+                        <input type="text" id="reviewerName" name="reviewerName" class="form-element" required placeholder="e.g. John Smith">
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewerCountry">Country *</label>
+                        <select id="reviewerCountry" name="reviewerCountry" class="form-element" required>
+                            <option value="">Select your country</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="India">India</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                            <!-- Add more as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Rating *</label>
+                        <div class="star-rating-input" id="starRatingInput">
+                            <span class="star-input" data-value="1">★</span>
+                            <span class="star-input" data-value="2">★</span>
+                            <span class="star-input" data-value="3">★</span>
+                            <span class="star-input" data-value="4">★</span>
+                            <span class="star-input" data-value="5">★</span>
+                            <input type="hidden" name="rating" id="ratingValue" value="0" required>
+                        </div>
+                        <span class="rating-error" style="display:none; color:#ff4d4d; font-size:0.8rem;">Please select a rating</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewerComment">Your Review *</label>
+                        <textarea id="reviewerComment" name="reviewerComment" class="form-element" rows="4" required placeholder="Tell us about your experience..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
  
 
  
@@ -3181,6 +3529,55 @@ var njt_wa = {"gdprStatus":"1","accounts":[{"accountId":9980,"accountName":"Jetw
 		document.getElementsByTagName('HEAD')[0].appendChild(link);  
 	}
 </script>  
+<!-- JavaScript for star rating interaction -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const starContainer = document.getElementById('starRatingInput');
+    const stars = starContainer.querySelectorAll('.star-input');
+    const ratingInput = document.getElementById('ratingValue');
+    const ratingError = document.querySelector('.rating-error');
+
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const value = parseInt(this.getAttribute('data-value'));
+            ratingInput.value = value;
+            updateStars(value);
+            ratingError.style.display = 'none';
+        });
+        star.addEventListener('mouseover', function() {
+            const value = parseInt(this.getAttribute('data-value'));
+            previewStars(value);
+        });
+        star.addEventListener('mouseout', function() {
+            const currentValue = parseInt(ratingInput.value) || 0;
+            updateStars(currentValue);
+        });
+    });
+
+    function updateStars(value) {
+        stars.forEach(s => {
+            const starValue = parseInt(s.getAttribute('data-value'));
+            s.classList.toggle('active', starValue <= value);
+        });
+    }
+
+    function previewStars(value) {
+        stars.forEach(s => {
+            const starValue = parseInt(s.getAttribute('data-value'));
+            s.classList.toggle('active', starValue <= value);
+        });
+    }
+
+    // Form validation for rating
+    const form = document.getElementById('reviewForm');
+    form.addEventListener('submit', function(e) {
+        if (parseInt(ratingInput.value) === 0) {
+            e.preventDefault();
+            ratingError.style.display = 'block';
+        }
+    });
+});
+</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"b3364e7767d14a088193c1a71e9cdb78","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
